@@ -6,7 +6,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-
+    min-height: 100vh;
+    box-sizing: border-box;
 }
 .hidden {
     display: none;
@@ -52,61 +53,50 @@ button:hover {
     padding: 10px;
     line-height: auto;
     font-family: monospace;
-    font-size: 20px;
+    font-size: calc(1vw + 10px);
     border-radius: 5px;
+    max-width: 100%;
+    box-sizing: border-box;
 }
-h2{
-    font-size: 30px;
+h2 {
+    font-size: calc(2vw + 10px);
     margin-bottom: 20px;
     color: #7e5c0d;
 }
-h3{
-    font-size: 25px;
+h3 {
+    font-size: calc(2vw + 10px);
     margin-bottom: 20px;
     color: #000000;
     text-align: left;
 }
 .box {
-    font-size: 20px;
+    font-size: calc(1vw + 10px);
     padding: 10px;
     line-height: auto;
     font-family: monospace;
     margin-right: 10px;
     cursor: pointer;
-    size: 20px;
     color: #a53b3b;
     text-align: left;
 }
 .checkbox {
-    font-size: 15px;
+    font-size: calc(1vw + 10px);
 }
 .Actionfield {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    padding: 20px;
+    padding: 5%;
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-family: monospace;
-    font-size: 15px;
+    font-size: calc(1vw + 10px);
     color: #333;
+    max-width: 90%;
+    box-sizing: border-box;
 }
-.Noticefield {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    font-family: monospace;
-    font-size: 15px;
-    color: #333;
-    overflow: auto;
-    resize: vertical;
-    max-height: 300px;
-}
+
 .timer-container {
     position: fixed;
     bottom: 0;
