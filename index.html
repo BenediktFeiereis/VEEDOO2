@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
-<body>
+<body class="contain">
   <div class="app-container" id="startScreen">
     <h1>Veedoo</h1>
     <p>
@@ -17,649 +17,219 @@
     <button onclick="startApp()">Start</button>
   </div>
 
-  <div class="app-page hidden" id="nextScreen">
-    <h2>Team</h2>
-    <form>
-        <input type="text" id="teamName" name="teamName" placeholder="MVE" required /> <br>
-        <input type="text" id="teamName" name="teamName" placeholder="MA" required /> <br>
-        <input type="text" id="teamName" name="teamName" placeholder="PRAKT" required /> <br>
-        <br>
-    </form>
-    <h2>Einsatzmanagement</h2>
-    <select id="teamRole" name="teamRole" required>
-        <option value="" disabled selected>Einsattzstichwort - Basis</option>
-        <option value="">-</option>
-        <option value="">RD1NC (REA/FR)</option>
-        <option value="">RD2B FR</option>
-        <option value="">RD2C (FR)</option>
-        <option value="">RD2NC (FR)</option>
-        <option value="">RD3B</option>
-        <option value="">RD3C</option>
-        <option value="">RD4B</option>
-        <option value="">RD4C</option>
-        <option value="">RD5</option>
-    </select>
-    <br>
-    <input type="text" name="" id="" placeholder="Funkrufname">
-    <br>
-    <input type="date" name="" id="" placeholder="Einsatzdatum">
-    <input type="time" name="" id="" placeholder="Einsatzzeit">
-    <br>
-    <select name="" id="">
-        <option value="" disabled selected>Einsatzort</option>
-        <option value="">-</option>
-        <option value="">Wohnung</option>
-        <option value="">Pflegeheim</option>
-        <option value="">Arbeitsplatz</option>
-        <option value="">Arztpraxis</option>
-        <option value="">Straße</option>
-        <option value="">Krankehnhaus</option>
-        <option value="">öffentlicher Raum</option>
-        <option value="">Massenveranstaltung</option>
-        <option value="">Bildungseinrchtung</option>
-        <option value="">Sportstätte</option>
-        <option value="">Geburtshaus</option>
-        <option value="">sonstige</option>
-    </select>
-    <br>
-    <h2>Patient</h2>
-    <input type="number" id="" name="" placeholder="Alter" required /> <br>
-    <input type="number" id="" name="" placeholder="Größe" required /> <br>
-    <input type="number" id="" name="" placeholder="Gewicht" required /> <br>
-    <select name="" id="gender">
-        <option value="" disabled selected>Gender</option>
-        <option value="">Männlich</option>
-        <option value="">Weiblich</option>
-        <option value="">Divers</option>
-    </select>
-    <br>
+<!--Protokoll-->
+<div class="app-page hidden" id="nextScreen">
 
-    <h2>Einsatzgeschehen</h2>
-    <select name="" id="Kollaps">
-        <option value="" disabled selected>Kollaps beobachtet durch</option>
-        <option value="">-</option>
-        <option value="">Ersthelfer</option>
-        <option value="">FR</option>
-        <option value="">RTW Besatzung</option>
-        <option value="">Notarzt</option>
-    </select>
-    <select name="" id="Kollaps">
-        <option value="" disabled selected>Ersthelfermaßnahmen</option>
-        <option value="">-</option>
-        <option value="">suffizient</option>
-        <option value="">insuffizient</option>
-    </select>
-    <br>
-    <h2>Survey</h2>
-    <input type="checkbox" name="" id=""><input type="text" name="" id="" placeholder="c - Critical Bleeding"><br>
-    <input type="checkbox" name="" id=""><input type="text" name="" id="" placeholder="A - Airway"><br>
-    <input type="checkbox" name="" id=""><input type="text" name="" id="" placeholder="B - Breahting"><br>
-    <input type="checkbox" name="" id=""><input type="text" name="" id="" placeholder="C - Circulation"><br>
-    <input type="checkbox" name="" id=""><input type="text" name="" id="" placeholder="D - Disability"><br>
-    <input type="checkbox" name="" id=""><input type="text" name="" id="" placeholder="E - Exposure"><br>
-
-    <div>
-        <h2>Survey Erstbefund</h2>
-        <h3>A+B Atmung</h3>
-        <input type="checkbox" name="" id="">unauffällig <br>
-        <input type="checkbox" name="" id="">Dypsnoe <br>
-        <input type="checkbox" name="" id="">Zyanose <br>
-        <input type="checkbox" name="" id="">Spastik <br>
-        <input type="checkbox" name="" id="">Rassselgeräusche <br>
-        <input type="checkbox" name="" id="">Stridor <br>
-        <input type="checkbox" name="" id="">Atemwegsverlegung <br>
-        <input type="checkbox" name="" id="">Schnappatmung <br>
-        <input type="checkbox" name="" id="">Apnoe <br>
-        <input type="checkbox" name="" id="">Beatmung <br>
-        <input type="checkbox" name="" id="">Hyperventilation <br>
-        <input type="checkbox" name="" id="">nicht beurteilbar <br>
-        <input type="checkbox" name="" id="">vermindertes AG re <br>
-        <input type="checkbox" name="" id="">vermindertes AG LI <br>
-        <br>
-        <h3>C Zirkulation + EKG</h3>
-        <input type="checkbox" name="" id="">unauffällig <br>
-        <input type="checkbox" name="" id="">Puls peripher tastbar <br>
-        <input type="checkbox" name="" id="">Puls zentral tastbar <br>
-        <input type="checkbox" name="" id="">Rekap > 2 Sekunden <br>
-        <input type="checkbox" name="" id="">Sinusrhyhtmus <br>
-        <input type="checkbox" name="" id="">absolute Arrhyhtmie <br>
-        <input type="checkbox" name="" id="">AV Block II°/III° <br>
-        <input type="checkbox" name="" id="">QRS Tachykardie - breit <br>
-        <input type="checkbox" name="" id="">QRS Tachykardie - schmal <br>
-        <input type="checkbox" name="" id="">Kammerflimmern / Flattern <br>
-        <input type="checkbox" name="" id="">PEA <br>
-        <input type="checkbox" name="" id="">Asystolie <br>
-        <input type="checkbox" name="" id="">Schrittmacherrhythmus <br>
-        <input type="checkbox" name="" id="">Infarkt - EKG (STEMI) <br>
-        <input type="checkbox" name="" id="">SVES <br>
-        <input type="checkbox" name="" id="">VES <br>
-        <input type="checkbox" name="" id="">monomorph <br>
-        <input type="checkbox" name="" id="">polymorph <br>
-        <input type="checkbox" name="" id="">LSB <br>
-        <input type="checkbox" name="" id="">RSB <br>
-        <br>
-        <h3>D Neuerologie</h3>
-        <input type="checkbox" name="" id="">unauffällig <br>
-           
-                <select name="" id="">
-                    <option value="" disabled selected>Bewusstseinslage</option>
-                    <option value="">analgosediert</option>
-                    <option value="">wach</option>
-                    <option value=""> reagiert auf Ansprache</option>
-                    <option value="">reagiert auf Schmerzreiz</option>
-                    <option value="">bewusstlos</option>
-                    <option value="">nicht beurteilbar</option>
-                </select> <br>
-                <select name="" id="">
-                    <option value="" disabled selected>Pupillen</option>
-                    <option value="">eng</option>
-                    <option value="">mittel</option>
-                    <option value="">entrundet</option>
-                    <option value="">nicht beurteilbar</option>
-                    <option value="">keine Lichtreaktion</option>
-                    <option value="">Blickdeviation</option>
-                </select> <br><br>
-                <h5>GCS</h5>
-                <select name="" id="">
-                    <option value="" disabled selected>Augen offen</option>
-                    <option value="">spontan - 4</option>
-                    <option value="">auf Aufforderung - 3</option>
-                    <option value=""> auf Schmerzreiz - 2</option>
-                    <option value=""> kein - 1</option>
-                </select>
-                <br>
-                <select name="" id="">
-                    <option value="" disabled selected>beste verbale Reaktion</option>
-                    <option value="">orientiert - 5</option>
-                    <option value="">desorientiert - 4</option>
-                    <option value=""> inadäquat - 3</option>
-                    <option value=""> unverständlich - 2</option>
-                    <option value="">kein - 1</option>
-                </select>
-                <br>
-                <select name="" id="">
-                    <option value="" disabled selected>beste motorische Reaktion</option>
-                    <option value=""></option>
-                    <option value="">auf Aufforderung - 6</option>
-                    <option value="">gezielte Abwehr - 5</option>
-                    <option value=""> ungziehlte Abwehr - 4</option>
-                    <option value=""> Beugesynergismen - 3</option>
-                    <option value="">Strecksynergismen - 2</option>
-                    <option value="">kein - 1</option>
-            </select> <br>
-            <input type="number" name="" id="" placeholder="GCS Summe"> <br>
-                
-        
-
-        <h4>Neurologische Auffälligkeiten</h4>
-        <input type="checkbox" name="" id="">keine <br>
-        <input type="checkbox" name="" id="">vorbestehendes neuro. def. <br>
-        <input type="checkbox" name="" id="">Facialparese <br>
-        <input type="checkbox" name="" id="">Armparese <br>
-        <input type="checkbox" name="" id="">Sprachstörung <br>
-        <input type="checkbox" name="" id="">Sehstörung <br>
-        <input type="checkbox" name="" id="">Querschnittsympt. <br>
-        <input type="checkbox" name="" id="">Babinski-Zeichen <br>
-        <input type="checkbox" name="" id="">Demenz <br>
-        <input type="checkbox" name="" id="">nicht beurteilbar <br>
-
-        <h4>Psyche</h4>
-        <input type="checkbox" name="" id="">unauffällig <br>
-        <input type="checkbox" name="" id="">nicht beurteilbar <br>
-        <input type="checkbox" name="" id="">wahnhaft <br>
-        <input type="checkbox" name="" id="">erregt <br>
-        <input type="checkbox" name="" id="">depressiv <br>
-        <input type="checkbox" name="" id="">verwirrt <br>
-        <input type="checkbox" name="" id="">aggressiv <br>
-        <input type="checkbox" name="" id="">ängstlich <br>
-        <input type="checkbox" name="" id="">suizidal <br>
-        <input type="checkbox" name="" id="">verlangsamt <br>
-        <input type="checkbox" name="" id="">euphorisch <br>
-        <input type="checkbox" name="" id="">motorisch unruhig <br>
-        
-        <h3>E - Eweiterte Untersuchung</h3>
-        <h4>Haut</h4>
-        <input type="checkbox" name="" id="">unauffällig <br>
-        <input type="checkbox" name="" id="">nicht beurteilbar <br>
-        <input type="checkbox" name="" id="">stehende Hautfalten <br>
-        <input type="checkbox" name="" id="">trocken <br>
-        <input type="checkbox" name="" id="">kaltschweißig <br>
-        <input type="checkbox" name="" id="">Dekubitus <br>
-        <input type="checkbox" name="" id="">Oedeme <br>
-        <input type="checkbox" name="" id="">nicht untersucht <br>
-        
-    </div>
-
-    <h2>Befund</h2>
-    <h3>Erstbefund</h3>
-    <h5>Blutdruck</h5>
-    <input type="number" name="" id="" placeholder="sys">/<input type="number" name="" id="" placeholder="dia">
-    <h5>Herzfrequenz</h5>
-    <input type="number" placeholder="bpm">/min
-    <select name="" id="HFRhythm">
-        <option value="" disabled selected>Regelmäßigkeit</option>
-        <option value="">regelmäßig</option>
-        <option value="">unregelmäßig</option>
-    </select>
-    <h5>Sauerstoffsättigung</h5>
-    <input type="number" placeholder="Wert eingeben">%
-    <select name="" id="o2gabejanein">
-        <option value="" disabled selected>unter O^2 Gabe?</option>
-        <option value="">mit Sauerstoffgabe</option>
-        <option value="">ohne Sauerstoffgabe</option>
-    </select>
-    <h5>SpCO</h5>
-    <input type="number" placeholder="Wert eingeben">mmHg
-    <h5>Blutucker</h5>
-    <input type="number" placeholder="Wert eingeben"> mg/dl
-    <h5>Temperatur</h5>
-    <input type="number">,<input type="number">°C
-    <h5>etCO2</h5>
-    <input type="number" placeholder="Wert eingeben">mmHg
-    
-    <h3>Zweitbefund</h3>
-    <h5>Blutdruck</h5>
-    <input type="number" name="" id="" placeholder="sys">/<input type="number" name="" id="" placeholder="dia">
-    <h5>Herzfrequenz</h5>
-    <input type="number" placeholder="bpm">/min
-    <select name="" id="HFRhythm">
-        <option value="" disabled selected>Regelmäßigkeit</option>
-        <option value="">regelmäßig</option>
-        <option value="">unregelmäßig</option>
-    </select>
-    <h5>Sauerstoffsättigung</h5>
-    <input type="number" placeholder="Wert eingeben">%
-    <select name="" id="o2gabejanein">
-        <option value="" disabled selected>unter O^2 Gabe?</option>
-        <option value="">mit Sauerstoffgabe</option>
-        <option value="">ohne Sauerstoffgabe</option>
-    </select>
-    <h5>SpCO</h5>
-    <input type="number" placeholder="Wert eingeben">mmHg
-    <h5>Blutucker</h5>
-    <input type="number" placeholder="Wert eingeben"> mg/dl
-    <h5>Temperatur</h5>
-    <input type="number">,<input type="number">°C
-    <h5>etCO2</h5>
-    <input type="number" placeholder="Wert eingeben">mmHg
-    <br>
-
-    <h4>Schmerz - NRS</h4>
-    <select name="" id="">
-        <option value="" disabled selected>Erstbefund</option>
-        <option value="">1</option>
-        <option value="">2</option>
-        <option value="">3</option>
-        <option value="">4</option>
-        <option value="">5</option>
-        <option value="">6</option>
-        <option value="">7</option>
-        <option value="">8</option>
-        <option value="">9</option>
-        <option value="">10</option>
-        <option value="">nicht gemessen</option>
-
-    </select>
-    <select name="" id="">
-        <option value="" disabled selected>Zweitbefund</option>
-        <option value="">1</option>
-        <option value="">2</option>
-        <option value="">3</option>
-        <option value="">4</option>
-        <option value="">5</option>
-        <option value="">6</option>
-        <option value="">7</option>
-        <option value="">8</option>
-        <option value="">9</option>
-        <option value="">10</option>
-        <option value="">nicht gemessen</option>
-    </select>
-    <h2>Diagnose/Verdacht</h2>
-    <div class="two-columns">
-        <div class="column">
-        <input type="checkbox" name="" id="">Kreislaufstillstand <br>
-        <input type="checkbox" name="" id="">NSTE - ACS <br>
-        <input type="checkbox" name="" id="">eCOPD <br>
-        <input type="checkbox" name="" id="">hyperten. NF <br>
-        <input type="checkbox" name="" id=""> Schlaganfall <br>
-        <input type="checkbox" name="" id="">Intoxikation <br>
-        <input type="checkbox" name="" id="">Akutes Abdomen <br>
-        <input type="checkbox" name="" id="">Lungenembolie <br>
-        <input type="checkbox" name="" id="">unkl. Thoraxschmerz <br>
-        <input type="checkbox" name="" id="">Rhythmusstörung <br>
-        <input type="checkbox" name="" id="">STEMI <br>
-        <input type="checkbox" name="" id="">Asthma <br>
-        <input type="checkbox" name="" id="">Hyperglykämie <br>
-        <input type="checkbox" name="" id="">Krampfanfall <br>
-        <input type="checkbox" name="" id="">Alkohol <br>
-        <input type="checkbox" name="" id="">Anaphylaxie <br>
-        <input type="checkbox" name="" id="">Herzinsuffizienz <br>
-    </div>
-    <div class="column">
-
-    <input type="checkbox" name="" id="">Lungenödem <br>
-    <input type="checkbox" name="" id="">Aortendissektion <br>
-    <input type="checkbox" name="" id="">Pneumonie <br>
-    <input type="checkbox" name="" id="">Infektion/ Sepsis <br>
-    <input type="checkbox" name="" id="">Synkope <br>
-    <input type="checkbox" name="" id="">Drogen <br>
-    <input type="checkbox" name="" id="">GYN NF <br>
-    <input type="checkbox" name="" id=""> GI Blutung <br>
-    <input type="checkbox" name="" id="">Hypotonie <br>
-    <input type="checkbox" name="" id="">Aspiration <br>
-    <input type="checkbox" name="" id="">Hyperventilation <br>
-    <input type="checkbox" name="" id="">Kolik <br>
-    <input type="checkbox" name="" id="">Exikose <br>
-    <input type="checkbox" name="" id="">Medikamente <br>
-    <input type="checkbox" name="" id="">Psych NF <br>
-    <input type="checkbox" name="" id="">präkl. Geburt <br>
-    <input type="checkbox" name="" id="">andere <input type="text" name="" id="" placeholder="hier Verdachtsdiagnose schreiben"><br>
-
-
-    </div>
-    </div>
-    <h2>Verletzung</h2>
-
-    <input type="checkbox" name="" id="">keine <br>
-
-    <h4>Verletzungsmuster</h4>
-    <select name="" id="">
-        <option value="" disabled selected>auswählen</option>
-        <option value="">Einzelverletzung</option>
-        <option value="">Mehrfachverletzung</option>
-        <option value="">Polytrauma</option>
-    </select> <br>
-    <h5>Gewaltanwendung</h5>
-    <input type="checkbox" name="" id="">Schlag <br>
-    <input type="checkbox" name="" id="">Stich <br>
-    <input type="checkbox" name="" id="">Schuss <br>
-    <input type="checkbox" name="" id="">sonstige <br>
-
-    <h4>Spezielle Traumen</h4>
-    <input type="checkbox" name="" id="">Vebrennung / Verbrühung <br>
-    <select name="" id="">
-        <option value="" disabled selected>Grad</option>
-        <option value="">-</option>
-        <option value="">1</option>
-        <option value="">2 a</option>
-        <option value="">2 b</option>
-        <option value="">3</option>
-        <option value="">4</option>
-    </select>
-    <input type="number" name="" id="" placeholder="Fläche">% <br>
-    <select name="" id="">
-        <option value="" disabled selected>Grad</option>
-        <option value="">-</option>
-        <option value="">1</option>
-        <option value="">2 a</option>
-        <option value="">2 b</option>
-        <option value="">3</option>
-        <option value="">4</option>
-    </select>
-    <input type="number" name="" id="" placeholder="Fläche">%
-    <br>
-    <input type="checkbox" name="" id=""> Inhalationstrauma <br>
-    <input type="checkbox" name="" id=""> Elektrounfall <br>
-    <input type="checkbox" name="" id="">Tauchunfall <br>
-    <input type="checkbox" name="" id="">sonstige <br>
-
-    <h4>Pat. war:</h4>
-    <input type="checkbox" name="" id="">Fußgänger <br>
-    <input type="checkbox" name="" id="">Fahrradfahrer <br>
-    <input type="checkbox" name="" id=""> Motorradfahrer <br>
-    <input type="checkbox" name="" id=""> PKW / LKW Insasse <br>
-    <input type="checkbox" name="" id=""> sonstige
-
-    <h4>Unfallmechanismus</h4>
-  <h5>Trauma</h5>
-  <select name="" id="">
-    <option value="" disabled selected>auswählen</option>
-    <option value="">-</option>
-    <option value="">stumpf</option>
-    <option value="">penetrierend</option>
-  </select>
-
-  <h5>Sturz</h5>
-  <select name="" id="">
-    <option value="" disabled selected>auswählen</option>
-    <option value="">-</option>
-    <option value=""> unter 3 m</option>
-    <option value=""> über 3 m</option>
-  </select>
-
-  <h4>STU</h4>
-  <div>
-    <select name="" id="">
-        <option value="" disabled selected>Schädel-Hirn</option>
-        <option value="">leicht</option>
-        <option value="">mittel</option>
-        <option value="">schwer</option>
-        <option value="">tödlich</option>
-      </select>
-      <select name="" id="">
-        <option value="" disabled selected>auswählen</option>
-        <option value="">offen</option>
-        <option value="">geschlossen</option>
-      </select>
-      <br>
-      <select name="" id="">
-        <option value="" disabled selected>Gesicht</option>
-        <option value="">leicht</option>
-        <option value="">mittel</option>
-        <option value="">schwer</option>
-        <option value="">tödlich</option>
-      </select>
-      <select name="" id="">
-        <option value="" disabled selected>auswählen</option>
-        <option value="">offen</option>
-        <option value="">geschlossen</option>
-      </select>
-      <br>
-      <select name="" id="">
-        <option value="" disabled selected>HWS</option>
-        <option value="">leicht</option>
-        <option value="">mittel</option>
-        <option value="">schwer</option>
-        <option value="">tödlich</option>
-      </select>
-      <select name="" id="">
-        <option value="" disabled selected>auswählen</option>
-        <option value="">offen</option>
-        <option value="">geschlossen</option>
-      </select>
-      <br>
-      <select name="" id="">
-        <option value="" disabled selected>Thorax</option>
-        <option value="">leicht</option>
-        <option value="">mittel</option>
-        <option value="">schwer</option>
-        <option value="">tödlich</option>
-      </select>
-      <select name="" id="">
-        <option value="" disabled selected>auswählen</option>
-        <option value="">offen</option>
-        <option value="">geschlossen</option>
-      </select>
-      <br>
-      <select name="" id="">
-        <option value="" disabled selected>Abdomen</option>
-        <option value="">leicht</option>
-        <option value="">mittel</option>
-        <option value="">schwer</option>
-        <option value="">tödlich</option>
-      </select>
-      <select name="" id="">
-        <option value="" disabled selected>auswählen</option>
-        <option value="">offen</option>
-        <option value="">geschlossen</option>
-      </select>
-      <br>
-      <select name="" id="">
-        <option value="" disabled selected>BWS/LWS</option>
-        <option value="">leicht</option>
-        <option value="">mittel</option>
-        <option value="">schwer</option>
-        <option value="">tödlich</option>
-      </select>
-      <select name="" id="">
-        <option value="" disabled selected>auswählen</option>
-        <option value="">offen</option>
-        <option value="">geschlossen</option>
-      </select>
-      <br>
-      <select name="" id="">
-        <option value="" disabled selected>Becken</option>
-        <option value="">leicht</option>
-        <option value="">mittel</option>
-        <option value="">schwer</option>
-        <option value="">tödlich</option>
-      </select>
-      <select name="" id="">
-        <option value="" disabled selected>auswählen</option>
-        <option value="">offen</option>
-        <option value="">geschlossen</option>
-      </select>
-      <br>
-      <select name="" id="">
-        <option value="" disabled selected>Obere Extremitäten</option>
-        <option value="">leicht</option>
-        <option value="">mittel</option>
-        <option value="">schwer</option>
-        <option value="">tödlich</option>
-      </select>
-      <select name="" id="">
-        <option value="" disabled selected>auswählen</option>
-        <option value="">offen</option>
-        <option value="">geschlossen</option>
-      </select>
-      <br>
-      <select name="" id="">
-        <option value="" disabled selected>untere Extremitäten</option>
-        <option value="">leicht</option>
-        <option value="">mittel</option>
-        <option value="">schwer</option>
-        <option value="">tödlich</option>
-      </select>
-      <select name="" id="">
-        <option value="" disabled selected>auswählen</option>
-        <option value="">offen</option>
-        <option value="">geschlossen</option>
-      </select>
-      <br>
-      <select name="" id="">
-        <option value="" disabled selected>Weichteile</option>
-        <option value="">leicht</option>
-        <option value="">mittel</option>
-        <option value="">schwer</option>
-        <option value="">tödlich</option>
-      </select>
-      <select name="" id="">
-        <option value="" disabled selected>auswählen</option>
-        <option value="">offen</option>
-        <option value="">geschlossen</option>
-      </select>
-  </div>
+  <h1>Prüfungsdukumentation <br> Berliner Feuewehr</h1> 
   <br>
+  <div class="box">
+    <h2>Lageeinschätzung</h2>
+    <h3>Scene</h3>
+    <div class="box">
+      <input type="checkbox" name="" id="" >Kalte Lage <br>
+      <input type="checkbox" name="" id="">Alarmierte Rettungsmittel <br>
+      <input type="checkbox" name="" id="">Persönliche Schutzausrüstung <br>
+      <input type="checkbox" name="" id="">Gefahren an der Einsatzstelle <br>
+      <input type="checkbox" name="" id="">Kinematik / Mechanismus <br>
+      <input type="checkbox" name="" id=""> Rückmeldung <input type="checkbox" name="" id=""> Nachalarm <br>
+    </div>
+    <h3>Impression</h3>
+    <input type="checkbox" name="" id="">Patientenanzahl<br>
+    <select name="" id="" class="Actionfield">
+      <option value="" disabled selected>Bewusstseinszustand</option>
+      <option value="">A</option>
+      <option value="">V</option>
+      <option value="">P</option>
+      <option value="">U</option>
+    </select>
+    <input type="checkbox" name="" id="">Vitale Bedrohung (REA?) <br>
+    <input type="checkbox" name="" id="">Trauma / Erkrankung <br>
+    <input type="checkbox" name="" id="">Signifikante Blutung <br>
+    <input type="checkbox" name="" id=""> Gerätemanagement <br>
+  </div>
+  <div class="box">
+    <!--ABC-->
+    <h2>cABCDE</h2>
+    <h3>c - critical Bleeding</h3>
+    <div style="display: flex; gap: 10px;">
+      <input type="text" name="" id="" placeholder="Maßnahme" class="Actionfield"><input type="number" name="" id="" placeholder="Minute" class="Actionfield">
+    </div> <br>
+    <div style="display: flex; gap: 10px;">
+      <input type="text" name="" id="" placeholder="Maßnahme" class="Actionfield"> <input type="number" name="" id="" placeholder="Minute" class="Actionfield">
+    </div> <br>
+    <input type="text" name="" id="" placeholder="Bemerkung zu c" class="Actionfield">
+    <h3>A - Airway</h3>
+    Trauma? HWS - Immobilisation <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    Offen? (öffnen) <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    Gefährdet? (sichern) <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    Verlegt? (Fremdk. entfernen) <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    <input type="text" name="" id="" placeholder="Bemerkung zu A" class="Noticefield">
+    <h3>B - Breathing</h3>
+    <p>Auskultation / Inspektion</p> <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    <p>Atemfrequenz (> 8 < 30/min)</p> <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    <p>Tidalvolumen /Atemarbeit</p> <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    <p>Oxygenierung (SpO2 Wert)</p> <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    <div>
+      <input type="checkbox" name="" id=""> <input type="number" name="" id="" class="Actionfield" placeholder="l o2" style="display: inline-block; width: auto;"> <input type="number" name="" id="" placeholder="Minute" class="Actionfield" style="display: inline-block; width: auto;"> <br>
+      <input type="checkbox" name="" id="" style="display: inline-block;"> Assistierte Beatmung <input type="number" name="" id="" placeholder="Minute" class="Actionfield" style="display: inline-block; width: auto;"> <br>
+      <input type="checkbox" name="" id="" style="display: inline-block;"> Entlastungspunktion <input type="number" name="" id="" placeholder="Minute" class="Actionfield" style="display: inline-block; width: auto;"> <br>
+      <input type="text" name="" id="" placeholder="Bemerkung zu B" class="Actionfield">  
+    </div>
+    <h3>C - Ciruculation</h3>
+    Herzfrequenz (60 - 80min)<input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    Pulsqualität (rhyhthmsich) <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    Blutdruck (120/80 mmHg) <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    P. Perfusion (Rekap < 2 sekunden) <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    Vorlast <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    <input type="checkbox" name="" id=""> Blutstillung <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    <input type="checkbox" name="" id=""> Gefäßzugang <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    <input type="checkbox" name="" id=""> Medikamente <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    <input type="checkbox" name="" id=""> Infusion <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    <h3>STU</h3>
+    Kopf - Oberschenkel <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    <input type="checkbox" name="" id=""> Stiffneck <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    <h3>D - Disability</h3>
+    <select name="" id="" class="Actionfield">
+      <option value="" disabled selected>Bewusstsein</option>
+      <option value="">A</option>
+      <option value="">V</option>
+      <option value="">P</option>
+      <option value="">U</option>
+    </select> <br>
+    Pupillen <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    Blutzucker <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    DMS <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    FAST TEST <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    <h3>E - Exposure</h3>
+    S <input type="checkbox" name="" id=""> A <input type="checkbox" name="" id=""> M <input type="checkbox" name="" id=""> P <input type="checkbox" name="" id=""> L <input type="checkbox" name="" id=""> E <input type="checkbox" name="" id=""> R <input type="checkbox" name="" id=""> <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    Wärmeerhaltung / Kühlung <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    O <input type="checkbox" name="" id=""> P <input type="checkbox" name="" id=""> Q <input type="checkbox" name="" id=""> R <input type="checkbox" name="" id=""> S <input type="checkbox" name="" id=""> T <input type="checkbox" name="" id=""> <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    <select name="" id="" class="Actionfield">
+      <option value="" disabled selected>NRS </option>
+      <option value="">NRS - 1</option>
+      <option value="">NRS - 2</option>
+      <option value="">NRS - 3</option>
+      <option value="">NRS - 4</option>
+      <option value="">NRS - 5</option>
+      <option value="">NRS - 6</option>
+      <option value="">NRS - 7</option>
+      <option value="">NRS - 8</option>
+      <option value="">NRS - 9</option>
+      <option value="">NRS - 10</option>
+    </select> <br>
+    Monitoring komplettieren <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    <input type="checkbox" name="" id=""> 12 - Kanal EKG <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    <input type="checkbox" name="" id=""> EKG <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+  </div>
+  <div class="box">
+    <h3>Arbeitsdiagnose</h3>
+    <input type="text" name="" id="" placeholder="hier einschreiben" class="Actionfield">
+    <h3>SOP - Konformität</h3>
+    <select name="" id="" class="Actionfield">
+      <option value="">JA</option>
+      <option value="">NEIN</option>
+    </select>
+  </div>
+  <div class="box">
+    <h3>Kritisch</h3>
+    <select name="" id="" class="Actionfield">
+      <option value="" disabled selected>Pateientenzustand</option>
+      <option value="">Kritisch</option>
+      <option value="">Unkritisch</option>
+    </select> <br>
+    <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    <input type="checkbox" name="" id=""> Transportpriorität <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    <input type="checkbox" name="" id=""> Nachalamierung <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    <input type="checkbox" name="" id=""> RTW <input type="checkbox" name="" id=""> NEF <input type="checkbox" name="" id=""> RTH <input type="checkbox" name="" id=""> LHF <input type="checkbox" name="" id=""> POL <input type="checkbox" name="" id=""> <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    <h2>Lagerung</h2>
+    <input type="checkbox" name="" id=""> OK - Hochlagerung <br>
+    <input type="checkbox" name="" id=""> Flachlagerung <br>
+    <input type="checkbox" name="" id=""> Schocklagerung <br>
+    <input type="checkbox" name="" id=""> Stabiles Seitenlagerung <br>
+    <input type="checkbox" name="" id=""> Sitzender Transport <br>
+    <h2>Rettungsstrategie</h2>
+    <input type="checkbox" name="" id=""> Spineboard <br>
+    <input type="checkbox" name="" id=""> Vakuummatratze <br>
+    <input type="checkbox" name="" id=""> Schaufeltrage <br>
+    <input type="checkbox" name="" id=""> Beckenschlinge <br>
+    <input type="checkbox" name="" id=""> Schienung von Extremitäten <br>
+  </div>
+  <div class="box">
+    <h2> Maßnahmen</h2>
+    <h3>Intubation</h3>
+    <input type="checkbox" name="" id=""> ET <input type="checkbox" name="" id=""> LT <br>
+    <input type="checkbox" name="" id=""> Korrekte Durchführung <br>
+    <input type="checkbox" name="" id=""> Sicht <input type="checkbox" name="" id=""> Auskultation <br>
+    <input type="checkbox" name="" id=""> Capnometrie <br>
+    <input type="checkbox" name="" id=""> Sauerstoffeinstellung <br>
+    <input type="checkbox" name="" id=""> Fixierung <br>
+    <input type="checkbox" name="" id=""> Freqeunz (10/min) <br>
+    <h3>Reanimation</h3>
+    <input type="checkbox" name="" id=""> Diagnostischer Block <br>
+    <input type="checkbox" name="" id=""> Druckpunkt korrekt <br>
+    <input type="checkbox" name="" id=""> Frequenz (100 - 120/min) <br>
+    <input type="checkbox" name="" id=""> Kompressionstiefe (5 - 6 cm) <br>
+    <input type="checkbox" name="" id=""> Entlastung <br>
+    <input type="checkbox" name="" id=""> Hands of < 10 sec. <br>
+    <input type="checkbox" name="" id=""> Medikamentengabe<br>
+  </div>
+  <div class="box">
+    <h2>Medikamente</h2>
+    <input type="text" name="" id="" placeholder="Medikamentenname" class="Actionfield"> <input type="number" name="" id="" placeholder="Dosierung" class="Actionfield"> <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    <input type="text" name="" id="" placeholder="Medikamentenname" class="Actionfield"> <input type="number" name="" id="" placeholder="Dosierung" class="Actionfield"> <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    <input type="text" name="" id="" placeholder="Medikamentenname" class="Actionfield"> <input type="number" name="" id="" placeholder="Dosierung" class="Actionfield"> <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    <input type="text" name="" id="" placeholder="Medikamentenname" class="Actionfield"> <input type="number" name="" id="" placeholder="Dosierung" class="Actionfield"> <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    <input type="text" name="" id="" placeholder="Medikamentenname" class="Actionfield"> <input type="number" name="" id="" placeholder="Dosierung" class="Actionfield"> <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    <input type="text" name="" id="" placeholder="Medikamentenname" class="Actionfield"> <input type="number" name="" id="" placeholder="Dosierung" class="Actionfield"> <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    <input type="text" name="" id="" placeholder="Medikamentenname" class="Actionfield"> <input type="number" name="" id="" placeholder="Dosierung" class="Actionfield"> <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+  </div>
+  <div class="box">
+    <h2>Soft Skills</h2>
+    <h3>Kommunikation</h3>
+    <input type="checkbox" name="" id=""> 1-2 <br>
+    <input type="checkbox" name="" id=""> 3-4 <br>
+    <input type="checkbox" name="" id=""> 5-6 <br>
+    <input type="text" name="" id="" placeholder="Begründung" class="Actionfield"><br>
+    <h3>Rechtliche Aspekte</h3>
+    <input type="checkbox" name="" id=""> 1-2 <br>
+    <input type="checkbox" name="" id=""> 3-4 <br>
+    <input type="checkbox" name="" id=""> 5-6 <br>
+    <input type="text" name="" id="" placeholder="Begründung" class="Actionfield"> <br>
+    <h3>MPG - Geräte</h3>
+    <input type="checkbox" name="" id=""> 1-2 <br>
+    <input type="checkbox" name="" id=""> 3-4 <br>
+    <input type="checkbox" name="" id=""> 5-6 <br>
+    <input type="text" name="" id="" placeholder="Begründung" class="Actionfield"><br>
+    <h3>Hygiene</h3>
+    <input type="checkbox" name="" id=""> 1-2 <br>
+    <input type="checkbox" name="" id=""> 3-4 <br>
+    <input type="checkbox" name="" id=""> 5-6 <br>
+    <input type="text" name="" id="" placeholder="Begründung" class="Actionfield"><br>
+  </div>
+  <div class="box">
+    <h2>Kontraindikationen - Gefährdungen</h2>
+    <input type="text" name="" id="" placeholder="hier einschreiben" class="Actionfield"> <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    <input type="text" name="" id="" placeholder="hier einschreiben" class="Actionfield"> <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    <input type="text" name="" id="" placeholder="hier einschreiben" class="Actionfield"> <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    <input type="text" name="" id="" placeholder="hier einschreiben" class="Actionfield"> <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    <input type="text" name="" id="" placeholder="hier einschreiben" class="Actionfield"> <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    <input type="text" name="" id="" placeholder="hier einschreiben" class="Actionfield"> <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    <input type="text" name="" id="" placeholder="hier einschreiben" class="Actionfield"> <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+    <input type="text" name="" id="" placeholder="hier einschreiben" class="Actionfield"> <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
+  </div>
+  <div class="box">
+    <h2>Bemerkung</h2>
+    <input type="text" name="" id="" class="Actionfield">
+  </div>
 
-  <h5>Zusammenhang mit beruflicher Aktivität</h5>
-  <input type="checkbox">JA <br>
-  <input type="checkbox" name="" id="">NEIN <br>
-
-  <h5>sportliche Aktivität</h5>
-  <input type="checkbox">JA <br>
-  <input type="checkbox" name="" id="">NEIN <br>
-
-<h2>Medikamente</h2>
-<div>
-    <input type="text" name="" id="" placeholder="MED name">
-<input type="number" name="" id="" placeholder="Dosis">
-<select name="" id="">
-    <option value="" disabled selected>Einheit</option>
-    <option value="">-</option>
-    <option value="">mg</option>
-    <option value="">ml</option>
-    <option value="">µg</option>
-    <option value="">IE</option>
-</select>
-<input type="text" name="" id="" placeholder="MED name">
-<input type="number" name="" id="" placeholder="Dosis">
-<select name="" id="">
-    <option value="" disabled selected>Einheit</option>
-    <option value="">-</option>
-    <option value="">mg</option>
-    <option value="">ml</option>
-    <option value="">µg</option>
-    <option value="">IE</option>
-</select>
-<input type="text" name="" id="" placeholder="MED name">
-<input type="number" name="" id="" placeholder="Dosis">
-<select name="" id="">
-    <option value="" disabled selected>Einheit</option>
-    <option value="">-</option>
-    <option value="">mg</option>
-    <option value="">ml</option>
-    <option value="">µg</option>
-    <option value="">IE</option>
-</select>
-<input type="text" name="" id="" placeholder="MED name">
-<input type="number" name="" id="" placeholder="Dosis">
-<select name="" id="">
-    <option value="" disabled selected>Einheit</option>
-    <option value="">-</option>
-    <option value="">mg</option>
-    <option value="">ml</option>
-    <option value="">µg</option>
-    <option value="">IE</option>
-</select>
-<input type="text" name="" id="" placeholder="MED name">
-<input type="number" name="" id="" placeholder="Dosis">
-<select name="" id="">
-    <option value="" disabled selected>Einheit</option>
-    <option value="">-</option>
-    <option value="">mg</option>
-    <option value="">ml</option>
-    <option value="">µg</option>
-    <option value="">IE</option>
-</select>
-<input type="text" name="" id="" placeholder="MED name">
-<input type="number" name="" id="" placeholder="Dosis">
-<select name="" id="">
-    <option value="" disabled selected>Einheit</option>
-    <option value="">-</option>
-    <option value="">mg</option>
-    <option value="">ml</option>
-    <option value="">µg</option>
-    <option value="">IE</option>
-</select>
-<input type="text" name="" id="" placeholder="MED name">
-<input type="number" name="" id="" placeholder="Dosis">
-<select name="" id="">
-    <option value="" disabled selected>Einheit</option>
-    <option value="">-</option>
-    <option value="">mg</option>
-    <option value="">ml</option>
-    <option value="">µg</option>
-    <option value="">IE</option>
-</select>
-<input type="text" name="" id="" placeholder="MED name">
-<input type="number" name="" id="" placeholder="Dosis">
-<select name="" id="">
-    <option value="" disabled selected>Einheit</option>
-    <option value="">-</option>
-    <option value="">mg</option>
-    <option value="">ml</option>
-    <option value="">µg</option>
-    <option value="">IE</option>
-</select>
-<br><br>
+<div class="timer-container">
+  <div id="timer">00:00</div>
+    <button onclick="startTimer()">Start</button>
+    <button onclick="pauseTimer()">Pause</button>
+    <button onclick="resetTimer()">Reset</button> 
+  </div>
 </div>
 
 
-
-
-  </div>
-  <br>
-
-  
 </body>
-</html></div>
+</html>

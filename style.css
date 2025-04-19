@@ -1,12 +1,12 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: monospace;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    height: 100vh;
-    background-color: #f4f4f4;
+
 }
 .hidden {
     display: none;
@@ -14,6 +14,7 @@ body {
   .two-columns {
     display: flex;
     gap: 20px;
+    
 }
 
 .column {
@@ -26,15 +27,102 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+.contain {
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+    height: 100vh; 
+    margin: 0; 
+    background:#e3e1d5;
+}
 button {
     padding: 10px 20px;
     font-size: 16px;
     color: #fff;
-    background-color: #007BFF;
+    background-color: #b68411;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 button:hover {
-    background-color: #0056b3;
+    transition: background-color 0.2s ease;
+    background-color: #f00e0e;
 }
+.field {
+    padding: 10px;
+    line-height: auto;
+    font-family: monospace;
+    font-size: 20px;
+    border-radius: 5px;
+}
+h2{
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #7e5c0d;
+}
+h3{
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: #000000;
+    text-align: left;
+}
+.box {
+    font-size: 20px;
+    padding: 10px;
+    line-height: auto;
+    font-family: monospace;
+    margin-right: 10px;
+    cursor: pointer;
+    size: 20px;
+    color: #a53b3b;
+    text-align: left;
+}
+.checkbox {
+    font-size: 15px;
+}
+.Actionfield {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: monospace;
+    font-size: 15px;
+    color: #333;
+}
+.Noticefield {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: monospace;
+    font-size: 15px;
+    color: #333;
+    overflow: auto;
+    resize: vertical;
+    max-height: 300px;
+}
+.timer-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 15px 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    text-align: center;
+    z-index: 1000;
+  }
+
+  #timer {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+
