@@ -2,13 +2,14 @@ body {
     font-family: monospace;
     line-height: 1.6;
     margin: 0;
-    padding: 0;
+    padding: 1rem; /* ein bisschen Abstand für Handy-Ansicht */
     display: flex;
     justify-content: center;
     align-items: flex-start;
     min-height: 100vh;
     box-sizing: border-box;
-}
+    overflow-x: hidden; /* wichtig: verhindert horizontales Scrollen */
+  }
 .hidden {
     display: none;
   }
@@ -58,6 +59,11 @@ button:hover {
     max-width: 100%;
     box-sizing: border-box;
 }
+h1 {
+    font-size: calc(2vw + 20px);
+    margin-bottom: 20px;
+    color: #000000;
+}
 h2 {
     font-size: calc(2vw + 10px);
     margin-bottom: 20px;
@@ -67,7 +73,12 @@ h3 {
     font-size: calc(2vw + 10px);
     margin-bottom: 20px;
     color: #000000;
-    text-align: left;
+    text-align:center;
+}
+h4 {
+    font-size: calc(2vw + 5px);
+    margin-bottom: 20px;
+    color: #7e5c0d;
 }
 .box {
     font-size: calc(1vw + 10px);
@@ -77,7 +88,7 @@ h3 {
     margin-right: 10px;
     cursor: pointer;
     color: #a53b3b;
-    text-align: left;
+    text-align: center;
 }
 .checkbox {
     font-size: calc(1vw + 10px);
@@ -85,6 +96,8 @@ h3 {
 .Actionfield {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 15px;
     padding: 5%;
     background: #fff;
@@ -93,8 +106,9 @@ h3 {
     font-family: monospace;
     font-size: calc(1vw + 10px);
     color: #333;
-    max-width: 90%;
+    max-width: 50%;
     box-sizing: border-box;
+    margin: 0 auto; /* Centers the element horizontally */
 }
 
 .timer-container {
