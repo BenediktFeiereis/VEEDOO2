@@ -1,3 +1,16 @@
+@media (min-width: 768px) {
+    .fields-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .field {
+        flex: 1 1 calc(33.333% - 20px); /* Drei Felder nebeneinander mit Abstand */
+        max-width: calc(33.333% - 20px);
+    }
+}
+
 body {
     font-family: monospace;
     line-height: 1.6;
