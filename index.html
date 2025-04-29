@@ -67,9 +67,48 @@
 
   <h1>Übungsdokumentation</h1> 
   <br>
+  <div>
+    <div class="timer-container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 0 10px;">
+      <div id="timer" style="flex: 1;">00:00</div>
+      <button onclick="startTimer()">Start</button>
+      <button onclick="pauseTimer()">Pause</button>
+      <button onclick="resetTimer()">Reset</button>
+      <div class="dropdown-menu" style="flex: 1; min-width: 150px;">
+        <select onchange="scrollToSection(this.value)" style="padding: 5px; width: 100%;" class="box">
+          <option value="" disabled selected>Menü</option>
+          <option value="Scene">Lageeinschätzung - Scene</option>
+          <option value="Impression">Lageeinschätzung - Impression</option>
+          <option value="criticalbleeding">c - Critical Bleeding</option>
+          <option value="airway">A - Airway</option>
+          <option value="breathing">B - Breathing</option>
+          <option value="circulation">C - Circulation</option>
+          <option value="stu">STU</option>
+          <option value="disability">D - Disability</option>
+          <option value="exposure">E - Exposure</option>
+          <option value="arbeitsdiagnose">Arbeitsdiagnose</option>
+          <option value="Lagerung">Lagerung</option>
+          <option value="Rettungsstrategie">Rettungsstrategie</option>
+          <option value="Intubation">Intubation</option>
+          <option value="Reanimation">Reanimation</option>
+          <option value="Medikamente">Medikamente</option>
+          <option value="softskills">Soft Skills</option>
+          <option value="kontraindikationen">Kontraindikationen - Gefährdungen</option>
+        </select>
+      </div>
+    </div>
+
+    <script>
+      function scrollToSection(id) {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    </script>
+  </div>
   <div class="box">
     <h2>Lageeinschätzung</h2>
-    <h3>Scene</h3>
+    <h3 id="Scene">Scene</h3>
     <div class="box">
       <input type="checkbox" name="" id="" >Kalte Lage <br>
       <input type="checkbox" name="" id="">Alarmierte Rettungsmittel <br>
@@ -78,15 +117,15 @@
       <input type="checkbox" name="" id="">Kinematik / Mechanismus <br>
       <input type="checkbox" name="" id=""> Rückmeldung <input type="checkbox" name="" id=""> Nachalarm <br>
     </div>
-    <h3>Impression</h3>
+    <h3 id="Impression">Impression</h3>
     <input type="checkbox" name="" id="">Patientenanzahl<br>
-    <select name="" id="" class="Actionfield">
+    <select name="" id="" class="box">
       <option value="" disabled selected>Bewusstseinszustand</option>
       <option value="">A</option>
       <option value="">V</option>
       <option value="">P</option>
       <option value="">U</option>
-    </select>
+    </select> <br>
     <input type="checkbox" name="" id="">Vitale Bedrohung (REA?) <br>
     <input type="checkbox" name="" id="">Trauma / Erkrankung <br>
     <input type="checkbox" name="" id="">Signifikante Blutung <br>
@@ -95,7 +134,7 @@
   <div class="box">
     <!--ABC-->
     <h2>cABCDE</h2>
-    <h3>c - critical Bleeding</h3>
+    <h3 id="criticalbleeding">c - critical Bleeding</h3>
     <div style="display: flex; gap: 10px;">
       <input type="text" name="" id="" placeholder="Maßnahme" class="Actionfield"><input type="number" name="" id="" placeholder="Minute" class="Actionfield">
     </div> <br>
@@ -103,13 +142,13 @@
       <input type="text" name="" id="" placeholder="Maßnahme" class="Actionfield"> <input type="number" name="" id="" placeholder="Minute" class="Actionfield">
     </div> <br>
     <input type="text" name="" id="" placeholder="Bemerkung zu c" class="Actionfield">
-    <h3>A - Airway</h3>
+    <h3 id="airway">A - Airway</h3>
     Trauma? HWS - Immobilisation <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
     Offen? (öffnen) <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
     Gefährdet? (sichern) <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
     Verlegt? (Fremdk. entfernen) <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
     <input type="text" name="" id="" placeholder="Bemerkung zu A" class="Actionfield">
-    <h3>B - Breathing</h3>
+    <h3 id="breathing">B - Breathing</h3>
     <p>Auskultation / Inspektion</p> <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
     <p>Atemfrequenz (> 8 < 30/min)</p> <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
     <p>Tidalvolumen /Atemarbeit</p> <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
@@ -120,7 +159,7 @@
       <input type="checkbox" name="" id="" style="display: inline-block;"> Entlastungspunktion <input type="number" name="" id="" placeholder="Minute" class="Actionfield" style="display: inline-block; width: auto;"> <br>
       <input type="text" name="" id="" placeholder="Bemerkung zu B" class="Actionfield">  
     </div>
-    <h3>C - Ciruculation</h3>
+    <h3 id="circulation">C - Ciruculation</h3>
     Herzfrequenz (60 - 80min)<input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
     Pulsqualität (rhyhthmsich) <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
     Blutdruck (120/80 mmHg) <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
@@ -132,12 +171,12 @@
     <input type="checkbox" name="" id=""> Infusion <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
     <input type="text" name="" id="" placeholder="Bemerkung zu C" class="Actionfield"> <br>
 
-    <h3>STU</h3>
+    <h3 id="stu">STU</h3>
     Kopf - Oberschenkel <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
     <input type="checkbox" name="" id=""> Stiffneck <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
     <input type="text" name="" id="" placeholder="Bemerkung zu STU" class="Actionfield"> <br>
 
-    <h3>D - Disability</h3>
+    <h3 id="disability">D - Disability</h3>
     <select name="" id="" class="Actionfield">
       <option value="" disabled selected>Bewusstsein</option>
       <option value="">A</option>
@@ -151,7 +190,7 @@
     FAST TEST <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
     <input type="text" name="" id="" placeholder="Bemerkung zu D" class="Actionfield"> <br>
 
-    <h3>E - Exposure</h3>
+    <h3 id="exposure">E - Exposure</h3>
     S <input type="checkbox" name="" id=""> A <input type="checkbox" name="" id=""> M <input type="checkbox" name="" id=""> P <input type="checkbox" name="" id=""> L <input type="checkbox" name="" id=""> E <input type="checkbox" name="" id=""> R <input type="checkbox" name="" id=""> <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
     Wärmeerhaltung / Kühlung <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
     O <input type="checkbox" name="" id=""> P <input type="checkbox" name="" id=""> Q <input type="checkbox" name="" id=""> R <input type="checkbox" name="" id=""> S <input type="checkbox" name="" id=""> T <input type="checkbox" name="" id=""> <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
@@ -177,7 +216,7 @@
 
   </div>
   <div class="box">
-    <h3>Arbeitsdiagnose</h3>
+    <h3 id="arbeitsdiagnose">Arbeitsdiagnose</h3>
     <input type="text" name="" id="" placeholder="hier einschreiben" class="Actionfield">
     <h3>SOP - Konformität</h3>
     <select name="" id="" class="Actionfield">
@@ -202,7 +241,7 @@
     <input type="checkbox" name="" id=""> RTW <input type="checkbox" name="" id=""> NEF <input type="checkbox" name="" id=""> RTH <input type="checkbox" name="" id=""> LHF <input type="checkbox" name="" id=""> POL <input type="checkbox" name="" id=""> <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
     <input type="text" name="" id="" placeholder="Bemerkung" class="Actionfield"> <br>
 
-    <h2>Lagerung</h2>
+    <h2 id="Lagerung">Lagerung</h2>
     <input type="checkbox" name="" id=""> OK - Hochlagerung <br>
     <input type="checkbox" name="" id=""> Flachlagerung <br>
     <input type="checkbox" name="" id=""> Schocklagerung <br>
@@ -210,7 +249,7 @@
     <input type="checkbox" name="" id=""> Sitzender Transport <br>
     <input type="text" name="" id="" placeholder="Bemerkung" class="Actionfield"> <br>
 
-    <h2>Rettungsstrategie</h2>
+    <h2 id="Rettungsstrategie">Rettungsstrategie</h2>
     <input type="checkbox" name="" id=""> Spineboard <br>
     <input type="checkbox" name="" id=""> Vakuummatratze <br>
     <input type="checkbox" name="" id=""> Schaufeltrage <br>
@@ -221,7 +260,7 @@
   </div>
   <div class="box">
     <h2> Maßnahmen</h2>
-    <h3>Intubation</h3>
+    <h3 id="Intubation">Intubation</h3>
     <input type="checkbox" name="" id=""> ET <input type="checkbox" name="" id=""> LT <br>
     <input type="checkbox" name="" id=""> Korrekte Durchführung <br>
     <input type="checkbox" name="" id=""> Sicht <input type="checkbox" name="" id=""> Auskultation <br>
@@ -231,7 +270,7 @@
     <input type="checkbox" name="" id=""> Freqeunz (10/min) <br>
     <input type="text" name="" id="" placeholder="Bemerkung" class="Actionfield"> <br>
 
-    <h3>Reanimation</h3>
+    <h3 id="Reanimation">Reanimation</h3>
     <input type="checkbox" name="" id=""> Diagnostischer Block <br>
     <input type="checkbox" name="" id=""> Druckpunkt korrekt <br>
     <input type="checkbox" name="" id=""> Frequenz (100 - 120/min) <br>
@@ -239,11 +278,50 @@
     <input type="checkbox" name="" id=""> Entlastung <br>
     <input type="checkbox" name="" id=""> Hands of < 10 sec. <br>
     <input type="checkbox" name="" id=""> Medikamentengabe<br>
+    <h3>Abegebene Schocks</h3>
+    <select name="" id="" class="Actionfield">
+      <option value="" disabled selected>abgegebene Schocks</option>
+      <option value="">-</option>
+      <option value="">1</option>
+      <option value="">2</option>
+      <option value="">3</option>
+      <option value="">4</option>
+      <option value="">5</option>
+      <option value="">6</option>
+      <option value="">7</option>
+      <option value="">8</option>
+    </select>
+    <h3>Adrenalin Gaben</h3>
+    <select name="" id="" class="Actionfield">
+      <option value="" disabled selected>Adrenalin Gaben</option>
+      <option value="">-</option>
+      <option value="">1</option>
+      <option value="">2</option>
+      <option value="">3</option>
+      <option value="">4</option>
+      <option value="">5</option>
+      <option value="">6</option>
+      <option value="">7</option>
+      <option value="">8</option>
+    </select>
+    <h3>Amiodaron Gaben</h3>
+    <select name="" id="" class="Actionfield">
+      <option value="" disabled selected>Amiodaron Gaben</option>
+      <option value="">-</option>
+      <option value="">1</option>
+      <option value="">2</option>
+      <option value="">3</option>
+      <option value="">4</option>
+      <option value="">5</option>
+      <option value="">6</option>
+      <option value="">7</option>
+      <option value="">8</option>
+    </select> <br>
     <input type="text" name="" id="" placeholder="Bemerkung" class="Actionfield"> <br>
 
   </div>
   <div class="box">
-    <h2>Medikamente</h2>
+    <h2 id="Medikamente">Medikamente</h2>
     <input type="text" name="" id="" placeholder="Medikamentenname" class="Actionfield"> <input type="number" name="" id="" placeholder="Dosierung" class="Actionfield"> <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>     <input type="text" name="" id="" placeholder="Bemerkung" class="Actionfield"> <br>
     <input type="text" name="" id="" placeholder="Medikamentenname" class="Actionfield"> <input type="number" name="" id="" placeholder="Dosierung" class="Actionfield"> <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>     <input type="text" name="" id="" placeholder="Bemerkung" class="Actionfield"> <br>
     <input type="text" name="" id="" placeholder="Medikamentenname" class="Actionfield"> <input type="number" name="" id="" placeholder="Dosierung" class="Actionfield"> <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>     <input type="text" name="" id="" placeholder="Bemerkung" class="Actionfield"> <br>
@@ -252,7 +330,7 @@
     <input type="text" name="" id="" placeholder="Medikamentenname" class="Actionfield"> <input type="number" name="" id="" placeholder="Dosierung" class="Actionfield"> <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>     <input type="text" name="" id="" placeholder="Bemerkung" class="Actionfield"> <br>
     <input type="text" name="" id="" placeholder="Medikamentenname" class="Actionfield"> <input type="number" name="" id="" placeholder="Dosierung" class="Actionfield"> <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>     <input type="text" name="" id="" placeholder="Bemerkung" class="Actionfield"> <br>
   </div>
-  <div class="box">
+  <div class="box" id="softskills">
     <h2>Soft Skills</h2>
     <h3>Kommunikation</h3>
     <input type="checkbox" name="" id=""> 1-2 <br>
@@ -275,7 +353,7 @@
     <input type="checkbox" name="" id=""> 5-6 <br>
     <input type="text" name="" id="" placeholder="Begründung" class="Actionfield"><br>
   </div>
-  <div class="box">
+  <div class="box" id="kontraindikationen">
     <h2>Kontraindikationen - Gefährdungen</h2>
     <input type="text" name="" id="" placeholder="hier einschreiben" class="Actionfield"> <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
     <input type="text" name="" id="" placeholder="hier einschreiben" class="Actionfield"> <input type="number" name="" id="" placeholder="Minute" class="Actionfield"> <br>
@@ -288,13 +366,6 @@
   </div>
   <br> <br> <br> <br> <br> <br> <br> <br>
 
-<div class="timer-container">
-  <div id="timer">00:00</div>
-    <button onclick="startTimer()">Start</button>
-    <button onclick="pauseTimer()">Pause</button>
-    <button onclick="resetTimer()">Reset</button>
-  </div>
-</div>
 
 
 </body>
