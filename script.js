@@ -42,7 +42,12 @@ function startApp() {
   location.reload();
     }
   }
-
+  function scrollToSection(id) {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({behavior: 'smooth' });
+    }
+  }
 updateDisplay(); // initial anzeigen
 async function generatePDF() {
   const { jsPDF } = window.jspdf;
